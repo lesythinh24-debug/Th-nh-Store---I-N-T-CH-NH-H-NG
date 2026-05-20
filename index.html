@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thịnh Store – Điện Tử Chính Hãng</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+
+<header class="header" id="header">
+  <div class="header-top">
+    <div class="container">
+      <div class="header-top-inner">
+        <span>Hotline: 0999-9999 |  Miễn phí vận chuyển đơn &gt; 500K</span>
+        <span> Mở cửa: 7:00 – 21:00 hàng ngày</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="container">
+      <div class="header-main-inner">
+        
+        <div class="logo">
+    
+          <div class="logo-text">
+            <span class="logo-brand">THỊNH</span>
+            <span class="logo-sub">STORE</span>
+          </div>
+        </div>
+
+        
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm..." />
+          <button class="search-btn" id="searchBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+          </button>
+        </div>
+
+        
+        <div class="header-actions">
+          <button class="action-btn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+            <span>Tài khoản</span>
+          </button>
+          <button class="action-btn cart-btn" id="cartBtn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+            <span>Giỏ hàng</span>
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  <nav class="navbar">
+    <div class="container">
+      <ul class="nav-list">
+        <li><a href="#" class="nav-link active" data-filter="all"> Tất cả</a></li>
+        <li><a href="#" class="nav-link" data-filter="dienthoai"> Điện thoại</a></li>
+        <li><a href="#" class="nav-link" data-filter="laptop"> Laptop</a></li>
+        <li><a href="#" class="nav-link" data-filter="tablet"> Máy tính bảng</a></li>
+        <li><a href="#" class="nav-link" data-filter="phu-kien"> Phụ kiện</a></li>
+        <li><a href="#" class="nav-link" data-filter="tivi"> Tivi</a></li>
+        <li><a href="#" class="nav-link sale-link" data-filter="sale"> Khuyến mãi</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-tag"> Công nghệ đỉnh cao</p>
+      <h1 class="hero-title">Khám Phá Thế Giới<br /><span>Điện Tử Hiện Đại</span></h1>
+      <p class="hero-desc">Hơn 5,000+ sản phẩm chính hãng – Giao hàng siêu tốc – Bảo hành uy tín</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="$('html,body').animate({scrollTop:$('#products').offset().top - 80},600)">Mua sắm ngay</button>
+        <button class="btn-outline">Xem khuyến mãi</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="promo-strip">
+  <div class="container">
+    <div class="promo-items">
+      <div class="promo-item">
+        
+        <div><strong>Miễn phí ship</strong><p>Đơn từ 500K</p></div>
+      </div>
+      <div class="promo-item">
+        
+        <div><strong>Bảo hành chính hãng</strong><p>12 – 24 tháng</p></div>
+      </div>
+      <div class="promo-item">
+       
+        <div><strong>Đổi trả dễ dàng</strong><p>Trong vòng 30 ngày</p></div>
+      </div>
+      <div class="promo-item">
+        
+        <div><strong>Trả góp 0%</strong><p>Lên đến 24 tháng</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="products-section" id="products">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Sản Phẩm Nổi Bật</h2>
+      <p class="section-sub">Chọn lọc từ các thương hiệu hàng đầu thế giới</p>
+    </div>
+
+    
+    <div class="filter-bar">
+      <span class="filter-label">Sắp xếp:</span>
+      <select id="sortSelect">
+        <option value="default">Mặc định</option>
+        <option value="price-asc">Giá tăng dần</option>
+        <option value="price-desc">Giá giảm dần</option>
+        <option value="name-asc">Tên A–Z</option>
+      </select>
+      <span class="result-count" id="resultCount">Hiển thị <strong>16</strong> sản phẩm</span>
+    </div>
+
+    <div class="no-results" id="noResults" style="display:none;">
+      <p> Không tìm thấy sản phẩm phù hợp.</p>
+    </div>
+
+   
+    <div class="products-grid" id="productsGrid">
+
+      
+      <div class="product-card" data-category="dienthoai" data-price="33890000" data-name="iPhone 17 256 GB">
+        <div class="card-badge sale">Sale 10%</div>
+        <div class="card-img">
+          <img src="https://vnshop.cdn-vnshop.vn/vnshop/77/1_dien_tho_95cf000ae7.jpeg" alt="iPhone 17 256 GB" />
+          <div class="card-overlay">
+            <button class="quick-view"> Xem nhanh</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Điện thoại</span>
+          <h3 class="card-title">iPhone 17 256 GB</h3>
+          <div class="card-price">
+            <span class="price-new">33.890.000₫</span>
+            <span class="price-old">35.100.000₫</span>
+          </div>
+          <button class="btn-add-cart" data-name="iPhone 17 256 GB" data-price="33890000"> Thêm vào giỏ</button>
+        </div>
+      </div>
+
+    
+      <div class="product-card" data-category="dienthoai" data-price="52720000" data-name="Samsung Galaxy S26 Ultra">
+        <div class="card-badge new">Mới</div>
+        <div class="card-img">
+          <img src="https://vnshop.cdn-vnshop.vn/vnshop/34/1_null_ef26f2a142.jpeg" alt="Samsung Galaxy S26 Ultra" />
+          <div class="card-overlay">
+            <button class="quick-view"> Xem nhanh</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Điện thoại</span>
+          <h3 class="card-title">Samsung Galaxy S26 Ultra</h3>
+          <div class="card-price">
+            <span class="price-new">52.720.000₫</span>
+          </div>
+          <button class="btn-add-cart" data-name="Samsung Galaxy S26 Ultra" data-price="52720000"> Thêm vào giỏ</button>
+        </div>
+      </div>
+
+     
+      <div class="product-card" data-category="laptop" data-price="20990000" data-name="Laptop Asus Vivobook">
+        <div class="card-badge hot">Hot</div>
+        <div class="card-img">
+          <img src="https://vnshop.cdn-vnshop.vn/8e/tai_xuong_45_51dab106a7.png" alt="Laptop Asus Vivobook" />
+          <div class="card-overlay">
+            <button class="quick-view"> Xem nhanh</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Laptop</span>
+          <h3 class="card-title">Laptop Asus Vivobook</h3>
+          <div class="card-price">
+            <span class="price-new">20.990.000₫</span>
+            <span class="price-old">23.900.000₫</span>
+          </div>
+          <button class="btn-add-cart" data-name="Laptop Asus Vivobook" data-price="20990000"> Thêm vào giỏ</button>
+        </div>
+      </div>
+
+   
+      <div class="product-card" data-category="laptop" data-price="38859000" data-name="Laptop Gaming ASUS TUF A15">
+        <div class="card-img">
+          <img src="https://vnshop.cdn-vnshop.vn/vnshop/8d/1_laptop_g_b3d083379c.jpeg" alt="Laptop Gaming ASUS TUF A15" />
+          <div class="card-overlay">
+            <button class="quick-view"> Xem nhanh</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Laptop</span>
+          <h3 class="card-title">Laptop Gaming ASUS TUF A15</h3>
+          <div class="card-price">
+            <span class="price-new">38.859.000₫</span>
+            <span class="price-old">42.500.000₫</span>
+          </div>
+          <button class="btn-add-cart" data-name="Laptop Gaming ASUS TUF A15" data-price="38859000"> Thêm vào giỏ</button>
+        </div>
+      </div>
+
+
+      <div class="product-card" data-category="phu-kien" data-price="1959000" data-name="Chuột gaming không dây Logitech G502 LIGHTSPEED">
+        <div class="card-badge sale">Sale 15%</div>
+        <div class="card-img">
+          <img src="https://vnshop.cdn-vnshop.vn/vnshop/26/unnamed_jp_24ba92ddeb.jpeg" alt="Chuột gaming không dây Logitech G502 LIGHTSPEED" />
+          <div class="card-overlay">
+            <button class="quick-view"> Xem nhanh</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Phụ kiện</span>
+          <h3 class="card-title">Chuột gaming không dây Logitech G502 LIGHTSPEED</h3>
+          <div class="card-price">
+            <span class="price-new">1.959.000₫</span>
+            <span class="price-old">2.299.000₫</span>
+          </div>
+          <button class="btn-add-cart" data-name="Chuột gaming không dây Logitech G502 LIGHTSPEED" data-price="1959000"> Thêm vào giỏ</button>
+        </div>
+      </div>
+
+
+      <div class="product-card" data-category="tivi" data-price="28099000" data-name="Samsung Smart TV Mini LED M77H 4K">
+        <div class="card-badge hot">Hot</div>
+        <div class="card-img">
+          <img src="https://vnshop.cdn-vnshop.vn/vnshop/76/1_ti_vi_sa_615beded87.jpeg" alt="Samsung Smart TV Mini LED M77H 4K" />
+          <div class="card-overlay">
+            <button class="quick-view"> Xem nhanh</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Tivi</span>
+          <h3 class="card-title">Samsung Smart TV Mini LED M77H 4K</h3>
+          <div class="card-price">
+            <span class="price-new">28.099.000₫</span>
+            <span class="price-old">32.500.000₫</span>
+          </div>
+          <button class="btn-add-cart" data-name="Samsung Smart TV Mini LED M77H 4K" data-price="28099000"> Thêm vào giỏ</button>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+
+<section class="brands-section">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center;margin-bottom:2rem">Thương Hiệu Đối Tác</h2>
+    <div class="brands-row">
+      <div class="brand-logo">Apple</div>
+      <div class="brand-logo">Samsung</div>
+      <div class="brand-logo">Sony</div>
+      <div class="brand-logo">Dell</div>
+      <div class="brand-logo">ASUS</div>
+      <div class="brand-logo">LG</div>
+      <div class="brand-logo">Xiaomi</div>
+    </div>
+  </div>
+</section>
+
+
+<div class="toast" id="toast"> Đã thêm vào giỏ hàng!</div>
+
+
+<footer class="footer">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+
+        
+        <div class="footer-col">
+          <div class="footer-logo">
+            <span>Thịnh Store</span>
+          </div>
+          <p class="footer-about">Chuyên cung cấp các sản phẩm điện tử chính hãng, chất lượng cao với giá cả cạnh tranh nhất thị trường Việt Nam.</p>
+          <div class="social-links">
+            <a href="#" class="social-btn"> Facebook</a>
+            <a href="#" class="social-btn"> Instagram</a>
+            <a href="#" class="social-btn"> YouTube</a>
+          </div>
+        </div>
+
+    
+        <div class="footer-col">
+          <h4 class="footer-heading">Danh mục sản phẩm</h4>
+          <ul class="footer-links">
+            <li><a href="#"> Điện thoại</a></li>
+            <li><a href="#"> Laptop</a></li>
+            <li><a href="#"> Máy tính bảng</a></li>
+            <li><a href="#"> Phụ kiện</a></li>
+            <li><a href="#"> Tivi</a></li>
+          </ul>
+        </div>
+
+      
+        <div class="footer-col">
+          <h4 class="footer-heading">Hỗ trợ khách hàng</h4>
+          <ul class="footer-links">
+            <li><a href="#">Hướng dẫn mua hàng</a></li>
+            <li><a href="#">Chính sách đổi trả</a></li>
+            <li><a href="#">Chính sách bảo hành</a></li>
+            <li><a href="#">Phương thức thanh toán</a></li>
+            <li><a href="#">Câu hỏi thường gặp</a></li>
+          </ul>
+        </div>
+
+     
+        <div class="footer-col">
+          <h4 class="footer-heading">Thông tin liên hệ</h4>
+          <ul class="footer-contact">
+            <li>
+              <span>123 EAKAO, ĐĂK LĂK</span>
+            </li>
+            <li>
+              <span>Hotline: <strong>0999-9999</strong> (Miễn phí)</span>
+            </li>
+            <li>
+              <span>support@thinhstore.vn</span>
+            </li>
+            <li>
+              <span>7:00 – 21:00 (Thứ 2 – Chủ nhật)</span>
+            </li>
+          </ul>
+
+          
+          <div class="newsletter">
+            <p>Đăng ký nhận ưu đãi:</p>
+            <div class="newsletter-form">
+              <input type="email" placeholder="Email của bạn..." />
+              <button>Đăng ký</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>@ 2026 Thịnh Store. Tất cả quyền được bảo lưu.</p>
+      <p>Thiết kế bởi <strong>Lê Sỹ Thịnh</strong> </p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
